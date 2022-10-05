@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dates</title>
 </head>
 <body>
-<input type="date" name="selecteDate" id="selected-date">
-<button type="submit" onclick="">Display</button>
-<p id="message"></p>
+    <label for="selected-date"></label>
+    <input type="date" id="selected-date">
+    <button onclick="onDisplayClicked();">Display</button>
+    <p id="message"></p>
 
-<script>
-    function onDisplayClicked() {
-        const selectedDateElement = document.getElementById('selected-date');
-        const selectedDateValue = new Date(selectedDateElement.value + 'T00:00:00');
-        const messageElement = document.getElementById('message');
-        messageElement.innertext = selectedDateValue.toString();
-    }   
-   </script>
+    <script>
+        function onDisplayClicked() {
+             //get the input box
+            const selectedDateElement = document.getElementById("selected-date")
+            //get the value
+            const selectedDate = new Date(selectedDateElement.value + 'T00:00');
+
+            //display it as a string in the paragraph
+            //get the paragraph
+            const messageElement = document.getElementById("message")
+            //set the paragraph's content
+            messageElement.innerText = selectedDate.toString();
+
+        }
+
+    </script>
 </body>
 </html>
